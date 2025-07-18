@@ -1,0 +1,60 @@
+{
+  "messages": [
+    {
+      "name": "EngineSpeed",
+      "id": 256,
+      "signals": [
+        {
+          "name": "RPM",
+          "startBit": 0,
+          "length": 16,
+          "unit": "rpm",
+          "factor": 0.25,
+          "offset": 0
+        }
+      ]
+    },
+    {
+      "name": "CoolantTemp",
+      "id": 257,
+      "signals": [
+        {
+          "name": "Temperature",
+          "startBit": 0,
+          "length": 8,
+          "unit": "°C",
+          "factor": 1,
+          "offset": -40
+        }
+      ]
+    },
+    {
+      "name": "Throttle",
+      "id": 258,
+      "signals": [
+        {
+          "name": "ThrottlePosition",
+          "startBit": 0,
+          "length": 8,
+          "unit": "%",
+          "factor": 0.5,
+          "offset": 0
+        }
+      ]
+    },
+    {
+      "name": "FuelLevel",
+      "id": 259,
+      "signals": [
+        {
+          "name": "Fuel",
+          "startBit": 0,
+          "length": 8,
+          "unit": "%",
+          "factor": 1,
+          "offset": 0
+        }
+      ]
+    }
+  ]
+}
