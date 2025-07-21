@@ -1,0 +1,729 @@
+[
+    {
+        "name": "DriverRearWindowStatus_Slave",
+        "frame_id": 52,
+        "is_extended_frame": false,
+        "signals": [
+            {
+                "name": "DriverRear_Window_Driving_Acknowledge",
+                "start": 0,
+                "length": 2,
+                "factor": 1,
+                "offset": 0,
+                "unit": null,
+                "is_big_endian": false,
+                "is_signed": false
+            },
+            {
+                "name": "DriverRear_Window_Driving_Status",
+                "start": 2,
+                "length": 2,
+                "factor": 1,
+                "offset": 0,
+                "unit": null,
+                "is_big_endian": false,
+                "is_signed": false
+            },
+            {
+                "name": "DriverRear_Window_Current_Position",
+                "start": 4,
+                "length": 12,
+                "factor": 1,
+                "offset": 0,
+                "unit": null,
+                "is_big_endian": false,
+                "is_signed": false
+            },
+            {
+                "name": "DriverRear_Window_Automatic_Movement_Status",
+                "start": 16,
+                "length": 2,
+                "factor": 1,
+                "offset": 0,
+                "unit": null,
+                "is_big_endian": false,
+                "is_signed": false
+            },
+            {
+                "name": "DriverRear_Window_Movement_Direction",
+                "start": 18,
+                "length": 2,
+                "factor": 1,
+                "offset": 0,
+                "unit": null,
+                "is_big_endian": false,
+                "is_signed": false
+            },
+            {
+                "name": "DriverRear_Window_Normalization_Status",
+                "start": 20,
+                "length": 3,
+                "factor": 1,
+                "offset": 0,
+                "unit": null,
+                "is_big_endian": false,
+                "is_signed": false
+            },
+            {
+                "name": "DriverRear_Window_Obstacle_Detection_Status",
+                "start": 24,
+                "length": 2,
+                "factor": 1,
+                "offset": 0,
+                "unit": null,
+                "is_big_endian": false,
+                "is_signed": false
+            },
+            {
+                "name": "DriverRear_Local_Switch",
+                "start": 26,
+                "length": 3,
+                "factor": 1,
+                "offset": 0,
+                "unit": null,
+                "is_big_endian": false,
+                "is_signed": false
+            }
+        ]
+    },
+    {
+        "name": "PassengerRearWindowStatus_Slave",
+        "frame_id": 50,
+        "is_extended_frame": false,
+        "signals": [
+            {
+                "name": "PassengerRear_Window_Driving_Acknowledge",
+                "start": 0,
+                "length": 2,
+                "factor": 1,
+                "offset": 0,
+                "unit": null,
+                "is_big_endian": false,
+                "is_signed": false
+            },
+            {
+                "name": "PassengerRear_Window_Driving_Status",
+                "start": 2,
+                "length": 2,
+                "factor": 1,
+                "offset": 0,
+                "unit": null,
+                "is_big_endian": false,
+                "is_signed": false
+            },
+            {
+                "name": "PassengerRear_Window_Current_Position",
+                "start": 4,
+                "length": 12,
+                "factor": 1,
+                "offset": 0,
+                "unit": null,
+                "is_big_endian": false,
+                "is_signed": false
+            },
+            {
+                "name": "PassengerRear_Window_Automatic_Movement_Status",
+                "start": 16,
+                "length": 2,
+                "factor": 1,
+                "offset": 0,
+                "unit": null,
+                "is_big_endian": false,
+                "is_signed": false
+            },
+            {
+                "name": "PassengerRear_Window_Movement_Direction",
+                "start": 18,
+                "length": 2,
+                "factor": 1,
+                "offset": 0,
+                "unit": null,
+                "is_big_endian": false,
+                "is_signed": false
+            },
+            {
+                "name": "PassengerRear_Window_Normalization_Status",
+                "start": 20,
+                "length": 3,
+                "factor": 1,
+                "offset": 0,
+                "unit": null,
+                "is_big_endian": false,
+                "is_signed": false
+            },
+            {
+                "name": "PassengerRear_Window_Obstacle_Detection_Status",
+                "start": 24,
+                "length": 2,
+                "factor": 1,
+                "offset": 0,
+                "unit": null,
+                "is_big_endian": false,
+                "is_signed": false
+            },
+            {
+                "name": "PassengerRear_Local_Switch",
+                "start": 26,
+                "length": 3,
+                "factor": 1,
+                "offset": 0,
+                "unit": null,
+                "is_big_endian": false,
+                "is_signed": false
+            }
+        ]
+    },
+    {
+        "name": "PassengerWindowStatus_Slave",
+        "frame_id": 49,
+        "is_extended_frame": false,
+        "signals": [
+            {
+                "name": "Passenger_Window_Driving_Acknowledge",
+                "start": 0,
+                "length": 2,
+                "factor": 1,
+                "offset": 0,
+                "unit": null,
+                "is_big_endian": false,
+                "is_signed": false
+            },
+            {
+                "name": "Passenger_Window_Driving_Status",
+                "start": 2,
+                "length": 2,
+                "factor": 1,
+                "offset": 0,
+                "unit": null,
+                "is_big_endian": false,
+                "is_signed": false
+            },
+            {
+                "name": "Passenger_Window_Current_Position",
+                "start": 4,
+                "length": 12,
+                "factor": 1,
+                "offset": 0,
+                "unit": null,
+                "is_big_endian": false,
+                "is_signed": false
+            },
+            {
+                "name": "Passenger_Window_Automatic_Movement_Status",
+                "start": 16,
+                "length": 2,
+                "factor": 1,
+                "offset": 0,
+                "unit": null,
+                "is_big_endian": false,
+                "is_signed": false
+            },
+            {
+                "name": "Passenger_Window_Movement_Direction",
+                "start": 18,
+                "length": 2,
+                "factor": 1,
+                "offset": 0,
+                "unit": null,
+                "is_big_endian": false,
+                "is_signed": false
+            },
+            {
+                "name": "Passenger_Window_Normalization_Status",
+                "start": 20,
+                "length": 3,
+                "factor": 1,
+                "offset": 0,
+                "unit": null,
+                "is_big_endian": false,
+                "is_signed": false
+            },
+            {
+                "name": "Passenger_Window_Obstacle_Detection_Status",
+                "start": 24,
+                "length": 2,
+                "factor": 1,
+                "offset": 0,
+                "unit": null,
+                "is_big_endian": false,
+                "is_signed": false
+            },
+            {
+                "name": "Passenger_Local_Switch",
+                "start": 26,
+                "length": 3,
+                "factor": 1,
+                "offset": 0,
+                "unit": null,
+                "is_big_endian": false,
+                "is_signed": false
+            }
+        ]
+    },
+    {
+        "name": "DriverWindowStatus_Slave",
+        "frame_id": 48,
+        "is_extended_frame": false,
+        "signals": [
+            {
+                "name": "Driver_Window_Driving_Acknowledge",
+                "start": 0,
+                "length": 2,
+                "factor": 1,
+                "offset": 0,
+                "unit": null,
+                "is_big_endian": false,
+                "is_signed": false
+            },
+            {
+                "name": "Driver_Window_Driving_Status",
+                "start": 2,
+                "length": 2,
+                "factor": 1,
+                "offset": 0,
+                "unit": null,
+                "is_big_endian": false,
+                "is_signed": false
+            },
+            {
+                "name": "Driver_Window_Current_Position",
+                "start": 4,
+                "length": 12,
+                "factor": 1,
+                "offset": 0,
+                "unit": null,
+                "is_big_endian": false,
+                "is_signed": false
+            },
+            {
+                "name": "Driver_Window_Automatic_Movement_Status",
+                "start": 16,
+                "length": 2,
+                "factor": 1,
+                "offset": 0,
+                "unit": null,
+                "is_big_endian": false,
+                "is_signed": false
+            },
+            {
+                "name": "Driver_Window_Movement_Direction",
+                "start": 18,
+                "length": 2,
+                "factor": 1,
+                "offset": 0,
+                "unit": null,
+                "is_big_endian": false,
+                "is_signed": false
+            },
+            {
+                "name": "Driver_Window_Normalization_Status",
+                "start": 20,
+                "length": 3,
+                "factor": 1,
+                "offset": 0,
+                "unit": null,
+                "is_big_endian": false,
+                "is_signed": false
+            },
+            {
+                "name": "Driver_Window_Obstacle_Detection_Status",
+                "start": 24,
+                "length": 2,
+                "factor": 1,
+                "offset": 0,
+                "unit": null,
+                "is_big_endian": false,
+                "is_signed": false
+            }
+        ]
+    },
+    {
+        "name": "DriverRearWindowStatus_Master",
+        "frame_id": 35,
+        "is_extended_frame": false,
+        "signals": [
+            {
+                "name": "DriverRear_Window_Movement_Status",
+                "start": 0,
+                "length": 2,
+                "factor": 1,
+                "offset": 0,
+                "unit": null,
+                "is_big_endian": false,
+                "is_signed": false
+            },
+            {
+                "name": "DriverRear_Window_Movement_Type",
+                "start": 2,
+                "length": 2,
+                "factor": 1,
+                "offset": 0,
+                "unit": null,
+                "is_big_endian": false,
+                "is_signed": false
+            },
+            {
+                "name": "DriverRear_Window_Movement_Target_Position",
+                "start": 4,
+                "length": 12,
+                "factor": 1,
+                "offset": 0,
+                "unit": null,
+                "is_big_endian": false,
+                "is_signed": false
+            },
+            {
+                "name": "DriverRear_Window_Short_Long_Drop_Mode",
+                "start": 16,
+                "length": 2,
+                "factor": 1,
+                "offset": 0,
+                "unit": null,
+                "is_big_endian": false,
+                "is_signed": false
+            },
+            {
+                "name": "DriverRear_Window_Normalization_Mode",
+                "start": 18,
+                "length": 2,
+                "factor": 1,
+                "offset": 0,
+                "unit": null,
+                "is_big_endian": false,
+                "is_signed": false
+            },
+            {
+                "name": "DriverRear_Window_Movement_Mode",
+                "start": 20,
+                "length": 2,
+                "factor": 1,
+                "offset": 0,
+                "unit": null,
+                "is_big_endian": false,
+                "is_signed": false
+            }
+        ]
+    },
+    {
+        "name": "PassengerRearWindowStatus_Master",
+        "frame_id": 34,
+        "is_extended_frame": false,
+        "signals": [
+            {
+                "name": "PassengerRear_Window_Movement_Status",
+                "start": 0,
+                "length": 2,
+                "factor": 1,
+                "offset": 0,
+                "unit": null,
+                "is_big_endian": false,
+                "is_signed": false
+            },
+            {
+                "name": "PassengerRear_Window_Movement_Type",
+                "start": 2,
+                "length": 2,
+                "factor": 1,
+                "offset": 0,
+                "unit": null,
+                "is_big_endian": false,
+                "is_signed": false
+            },
+            {
+                "name": "PassengerRear_Window_Movement_Target_Position",
+                "start": 4,
+                "length": 12,
+                "factor": 1,
+                "offset": 0,
+                "unit": null,
+                "is_big_endian": false,
+                "is_signed": false
+            },
+            {
+                "name": "PassengerRear_Window_Short_Long_Drop_Mode",
+                "start": 16,
+                "length": 2,
+                "factor": 1,
+                "offset": 0,
+                "unit": null,
+                "is_big_endian": false,
+                "is_signed": false
+            },
+            {
+                "name": "PassengerRear_Window_Normalization_Mode",
+                "start": 18,
+                "length": 2,
+                "factor": 1,
+                "offset": 0,
+                "unit": null,
+                "is_big_endian": false,
+                "is_signed": false
+            },
+            {
+                "name": "PassengerRear_Window_Movement_Mode",
+                "start": 20,
+                "length": 2,
+                "factor": 1,
+                "offset": 0,
+                "unit": null,
+                "is_big_endian": false,
+                "is_signed": false
+            }
+        ]
+    },
+    {
+        "name": "PassengerWindowStatus_Master",
+        "frame_id": 33,
+        "is_extended_frame": false,
+        "signals": [
+            {
+                "name": "Passenger_Window_Movement_Status",
+                "start": 0,
+                "length": 2,
+                "factor": 1,
+                "offset": 0,
+                "unit": null,
+                "is_big_endian": false,
+                "is_signed": false
+            },
+            {
+                "name": "Passenger_Window_Movement_Type",
+                "start": 2,
+                "length": 2,
+                "factor": 1,
+                "offset": 0,
+                "unit": null,
+                "is_big_endian": false,
+                "is_signed": false
+            },
+            {
+                "name": "Passenger_Window_Movement_Target_Position",
+                "start": 4,
+                "length": 12,
+                "factor": 1,
+                "offset": 0,
+                "unit": null,
+                "is_big_endian": false,
+                "is_signed": false
+            },
+            {
+                "name": "Passenger_Window_Short_Long_Drop_Mode",
+                "start": 16,
+                "length": 2,
+                "factor": 1,
+                "offset": 0,
+                "unit": null,
+                "is_big_endian": false,
+                "is_signed": false
+            },
+            {
+                "name": "Passenger_Window_Normalization_Mode",
+                "start": 18,
+                "length": 2,
+                "factor": 1,
+                "offset": 0,
+                "unit": null,
+                "is_big_endian": false,
+                "is_signed": false
+            },
+            {
+                "name": "Passenger_Window_Movement_Mode",
+                "start": 20,
+                "length": 2,
+                "factor": 1,
+                "offset": 0,
+                "unit": null,
+                "is_big_endian": false,
+                "is_signed": false
+            }
+        ]
+    },
+    {
+        "name": "DriverWindowStatus_Master",
+        "frame_id": 32,
+        "is_extended_frame": false,
+        "signals": [
+            {
+                "name": "Driver_Window_Movement_Status",
+                "start": 0,
+                "length": 2,
+                "factor": 1,
+                "offset": 0,
+                "unit": null,
+                "is_big_endian": false,
+                "is_signed": false
+            },
+            {
+                "name": "Driver_Window_Movement_Type",
+                "start": 2,
+                "length": 2,
+                "factor": 1,
+                "offset": 0,
+                "unit": null,
+                "is_big_endian": false,
+                "is_signed": false
+            },
+            {
+                "name": "Driver_Window_Movement_Target_Position",
+                "start": 4,
+                "length": 12,
+                "factor": 1,
+                "offset": 0,
+                "unit": null,
+                "is_big_endian": false,
+                "is_signed": false
+            },
+            {
+                "name": "Driver_Window_Short_Long_Drop_Mode",
+                "start": 16,
+                "length": 2,
+                "factor": 1,
+                "offset": 0,
+                "unit": null,
+                "is_big_endian": false,
+                "is_signed": false
+            },
+            {
+                "name": "Driver_Window_Normalization_Mode",
+                "start": 18,
+                "length": 2,
+                "factor": 1,
+                "offset": 0,
+                "unit": null,
+                "is_big_endian": false,
+                "is_signed": false
+            },
+            {
+                "name": "Driver_Window_Movement_Mode",
+                "start": 20,
+                "length": 2,
+                "factor": 1,
+                "offset": 0,
+                "unit": null,
+                "is_big_endian": false,
+                "is_signed": false
+            }
+        ]
+    },
+    {
+        "name": "GlobalWindowStatus_Master",
+        "frame_id": 21,
+        "is_extended_frame": false,
+        "signals": [
+            {
+                "name": "Window_Movement_Availability",
+                "start": 0,
+                "length": 2,
+                "factor": 1,
+                "offset": 0,
+                "unit": null,
+                "is_big_endian": false,
+                "is_signed": false
+            },
+            {
+                "name": "Child_Protection_Status",
+                "start": 2,
+                "length": 2,
+                "factor": 1,
+                "offset": 0,
+                "unit": null,
+                "is_big_endian": false,
+                "is_signed": false
+            },
+            {
+                "name": "Comfort_Function_Status",
+                "start": 4,
+                "length": 3,
+                "factor": 1,
+                "offset": 0,
+                "unit": null,
+                "is_big_endian": false,
+                "is_signed": false
+            }
+        ]
+    },
+    {
+        "name": "ChildSafetyLedStatus",
+        "frame_id": 17,
+        "is_extended_frame": false,
+        "signals": [
+            {
+                "name": "Child_Protection_Led_Status",
+                "start": 0,
+                "length": 2,
+                "factor": 1,
+                "offset": 0,
+                "unit": null,
+                "is_big_endian": false,
+                "is_signed": false
+            }
+        ]
+    },
+    {
+        "name": "CentralSwitchBlock",
+        "frame_id": 16,
+        "is_extended_frame": false,
+        "signals": [
+            {
+                "name": "Central_Switch_Block_Driver",
+                "start": 0,
+                "length": 3,
+                "factor": 1,
+                "offset": 0,
+                "unit": null,
+                "is_big_endian": false,
+                "is_signed": false
+            },
+            {
+                "name": "Central_Switch_Block_Driver_Rear",
+                "start": 3,
+                "length": 3,
+                "factor": 1,
+                "offset": 0,
+                "unit": null,
+                "is_big_endian": false,
+                "is_signed": false
+            },
+            {
+                "name": "Rear_Window_Safety_Switch",
+                "start": 6,
+                "length": 2,
+                "factor": 1,
+                "offset": 0,
+                "unit": null,
+                "is_big_endian": false,
+                "is_signed": false
+            },
+            {
+                "name": "Central_Switch_Block_Passenger",
+                "start": 8,
+                "length": 3,
+                "factor": 1,
+                "offset": 0,
+                "unit": null,
+                "is_big_endian": false,
+                "is_signed": false
+            },
+            {
+                "name": "Central_Switch_Block_Passenger_Rear",
+                "start": 11,
+                "length": 3,
+                "factor": 1,
+                "offset": 0,
+                "unit": null,
+                "is_big_endian": false,
+                "is_signed": false
+            },
+            {
+                "name": "Central_Switch_Block_All_Window",
+                "start": 16,
+                "length": 3,
+                "factor": 1,
+                "offset": 0,
+                "unit": null,
+                "is_big_endian": false,
+                "is_signed": false
+            }
+        ]
+    }
+]

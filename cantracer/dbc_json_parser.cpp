@@ -23,17 +23,17 @@ bool DbcJsonParser::loadFromFile(const QString &filePath) {
         return false;
     }
 
-    QJsonObject root = doc.object();
-    QJsonArray messagesArray = root["messages"].toArray();
+    // Ton JSON est un tableau au top-level, pas un objet
+    QJsonArray messagesArray = doc.array();
 
-    messages.clear();  // Nettoyer l'ancien contenu
+    messages.clear();
 
     for (const QJsonValue &msgVal : messagesArray) {
         QJsonObject msgObj = msgVal.toObject();
 
         Message msg;
         msg.name = msgObj["name"].toString();
-        msg.id = msgObj["id"].toInt();
+        msg.id = msgObj["frame_id"].toInt();  // Utilise frame_id ici
 
         QJsonArray signalsArray = msgObj["signals"].toArray();
         for (const QJsonValue &sigVal : signalsArray) {
@@ -41,12 +41,22 @@ bool DbcJsonParser::loadFromFile(const QString &filePath) {
 
             CanSignal sig;
             sig.name = sigObj["name"].toString();
-            sig.startBit = sigObj["startBit"].toInt();
+            sig.startBit = sigObj["start"].toInt();  // champ 'start' dans JSON
             sig.length = sigObj["length"].toInt();
-            sig.unit = sigObj["unit"].toString();
             sig.factor = sigObj["factor"].toDouble();
             sig.offset = sigObj["offset"].toDouble();
-            msg.signalss.append(sig);
+
+            // unit peut être null, gérer ça
+            if (sigObj["unit"].isNull())
+                sig.unit = "";
+            else
+                sig.unit = sigObj["unit"].toString();
+
+            // Facultatif : récupérer ces champs si besoin
+            sig.isBigEndian = sigObj["is_big_endian"].toBool();
+            sig.isSigned = sigObj["is_signed"].toBool();
+
+            msg.signalss.append(sig);  // corriger le nom de la liste dans Message
         }
 
         messages.append(msg);
@@ -55,6 +65,7 @@ bool DbcJsonParser::loadFromFile(const QString &filePath) {
     qDebug() << "✅ Nombre de messages chargés :" << messages.size();
     return true;
 }
+
 
 QList<Message> DbcJsonParser::getMessages() const {
     return messages;

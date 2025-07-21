@@ -10,4 +10,4 @@ public:
     QList<CanFrame> readAscFile(const QString &filePath);
 };
 
-#endif // ASC_READER_H
+#endif

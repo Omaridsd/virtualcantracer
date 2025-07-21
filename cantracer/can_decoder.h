@@ -1,4 +1,4 @@
-// can_decoder.h
+
 #ifndef CAN_DECODER_H
 #define CAN_DECODER_H
 

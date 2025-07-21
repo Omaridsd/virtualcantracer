@@ -9,8 +9,9 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
-find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
+find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets Charts)
+find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets Charts)
+
 
 set(PROJECT_SOURCES
         main.cpp
@@ -21,6 +22,9 @@ set(PROJECT_SOURCES
         dbc_json_parser.h
         asc_reader.cpp
         asc_reader.h
+        signal_selection_dialog.cpp
+        signal_selection_dialog.h
+
 
 
 )
@@ -33,6 +37,8 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         can_decoder.cpp
         signal_model.h
         can_decoder.h
+        signal_selection_dialog.h
+        signal_selection_dialog.cpp
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET cantracer APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
@@ -52,7 +58,7 @@ else()
     endif()
 endif()
 
-target_link_libraries(cantracer PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+target_link_libraries(cantracer PRIVATE Qt${QT_VERSION_MAJOR}::Widgets Qt${QT_VERSION_MAJOR}::Charts)
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
 # If you are developing for iOS or macOS you should consider setting an

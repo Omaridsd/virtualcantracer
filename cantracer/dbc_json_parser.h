@@ -16,4 +16,4 @@ private:
     QList<Message> messages;
 };
 
-#endif // DBC_JSON_PARSER_H
+#endif

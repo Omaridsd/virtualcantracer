@@ -1,5 +1,5 @@
-#include <QtGlobal>    // Pour quint64, etc.
-#include <cstdint>     // Pour uint64_t, int64_t
+#include <QtGlobal>
+#include <cstdint>
 #include "signal_model.h"
 #include "can_decoder.h"
 

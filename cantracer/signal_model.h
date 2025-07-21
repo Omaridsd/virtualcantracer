@@ -12,7 +12,8 @@ struct CanSignal {
     QString unit;      // Unité du signal (ex: km/h, rpm)
     double factor;     // Facteur de conversion
     double offset;
-    bool isSigned;      // Décalage
+    bool isSigned=false ;    // Décalage
+    bool isBigEndian = false;
 };
 
 // Structure représentant un message CAN avec ses signaux
