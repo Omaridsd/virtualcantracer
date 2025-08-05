@@ -65,14 +65,6 @@ build CMakeFiles/cantracer.dir/main.cpp.obj: CXX_COMPILER__cantracer_unscanned_D
   OBJECT_DIR = CMakeFiles\cantracer.dir
   OBJECT_FILE_DIR = CMakeFiles\cantracer.dir
 
-build CMakeFiles/cantracer.dir/mainwindow.cpp.obj: CXX_COMPILER__cantracer_unscanned_Debug C$:/Users/DELL/OneDrive/Images/Bureau/virtualcantracer/cantracer/mainwindow.cpp || cmake_object_order_depends_target_cantracer
-  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CHARTS_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_OPENGLWIDGETS_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
-  DEP_FILE = CMakeFiles\cantracer.dir\mainwindow.cpp.obj.d
-  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
-  INCLUDES = -IC:/Users/DELL/OneDrive/Images/Bureau/virtualcantracer/cantracer/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/cantracer_autogen/include -isystem C:/Qt/6.9.1/mingw_64/include/QtCore -isystem C:/Qt/6.9.1/mingw_64/include -isystem C:/Qt/6.9.1/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.9.1/mingw_64/include/QtWidgets -isystem C:/Qt/6.9.1/mingw_64/include/QtGui -isystem C:/Qt/6.9.1/mingw_64/include/QtCharts -isystem C:/Qt/6.9.1/mingw_64/include/QtOpenGL -isystem C:/Qt/6.9.1/mingw_64/include/QtOpenGLWidgets
-  OBJECT_DIR = CMakeFiles\cantracer.dir
-  OBJECT_FILE_DIR = CMakeFiles\cantracer.dir
-
 build CMakeFiles/cantracer.dir/dbc_json_parser.cpp.obj: CXX_COMPILER__cantracer_unscanned_Debug C$:/Users/DELL/OneDrive/Images/Bureau/virtualcantracer/cantracer/dbc_json_parser.cpp || cmake_object_order_depends_target_cantracer
   DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CHARTS_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_OPENGLWIDGETS_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
   DEP_FILE = CMakeFiles\cantracer.dir\dbc_json_parser.cpp.obj.d
@@ -105,6 +97,30 @@ build CMakeFiles/cantracer.dir/can_decoder.cpp.obj: CXX_COMPILER__cantracer_unsc
   OBJECT_DIR = CMakeFiles\cantracer.dir
   OBJECT_FILE_DIR = CMakeFiles\cantracer.dir
 
+build CMakeFiles/cantracer.dir/mainwindow.cpp.obj: CXX_COMPILER__cantracer_unscanned_Debug C$:/Users/DELL/OneDrive/Images/Bureau/virtualcantracer/cantracer/mainwindow.cpp || cmake_object_order_depends_target_cantracer
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CHARTS_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_OPENGLWIDGETS_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\cantracer.dir\mainwindow.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/DELL/OneDrive/Images/Bureau/virtualcantracer/cantracer/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/cantracer_autogen/include -isystem C:/Qt/6.9.1/mingw_64/include/QtCore -isystem C:/Qt/6.9.1/mingw_64/include -isystem C:/Qt/6.9.1/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.9.1/mingw_64/include/QtWidgets -isystem C:/Qt/6.9.1/mingw_64/include/QtGui -isystem C:/Qt/6.9.1/mingw_64/include/QtCharts -isystem C:/Qt/6.9.1/mingw_64/include/QtOpenGL -isystem C:/Qt/6.9.1/mingw_64/include/QtOpenGLWidgets
+  OBJECT_DIR = CMakeFiles\cantracer.dir
+  OBJECT_FILE_DIR = CMakeFiles\cantracer.dir
+
+build CMakeFiles/cantracer.dir/cursormanager.cpp.obj: CXX_COMPILER__cantracer_unscanned_Debug C$:/Users/DELL/OneDrive/Images/Bureau/virtualcantracer/cantracer/cursormanager.cpp || cmake_object_order_depends_target_cantracer
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CHARTS_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_OPENGLWIDGETS_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\cantracer.dir\cursormanager.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/DELL/OneDrive/Images/Bureau/virtualcantracer/cantracer/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/cantracer_autogen/include -isystem C:/Qt/6.9.1/mingw_64/include/QtCore -isystem C:/Qt/6.9.1/mingw_64/include -isystem C:/Qt/6.9.1/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.9.1/mingw_64/include/QtWidgets -isystem C:/Qt/6.9.1/mingw_64/include/QtGui -isystem C:/Qt/6.9.1/mingw_64/include/QtCharts -isystem C:/Qt/6.9.1/mingw_64/include/QtOpenGL -isystem C:/Qt/6.9.1/mingw_64/include/QtOpenGLWidgets
+  OBJECT_DIR = CMakeFiles\cantracer.dir
+  OBJECT_FILE_DIR = CMakeFiles\cantracer.dir
+
+build CMakeFiles/cantracer.dir/customchartview.cpp.obj: CXX_COMPILER__cantracer_unscanned_Debug C$:/Users/DELL/OneDrive/Images/Bureau/virtualcantracer/cantracer/customchartview.cpp || cmake_object_order_depends_target_cantracer
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CHARTS_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_OPENGLWIDGETS_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\cantracer.dir\customchartview.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/DELL/OneDrive/Images/Bureau/virtualcantracer/cantracer/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/cantracer_autogen/include -isystem C:/Qt/6.9.1/mingw_64/include/QtCore -isystem C:/Qt/6.9.1/mingw_64/include -isystem C:/Qt/6.9.1/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.9.1/mingw_64/include/QtWidgets -isystem C:/Qt/6.9.1/mingw_64/include/QtGui -isystem C:/Qt/6.9.1/mingw_64/include/QtCharts -isystem C:/Qt/6.9.1/mingw_64/include/QtOpenGL -isystem C:/Qt/6.9.1/mingw_64/include/QtOpenGLWidgets
+  OBJECT_DIR = CMakeFiles\cantracer.dir
+  OBJECT_FILE_DIR = CMakeFiles\cantracer.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target cantracer
@@ -113,7 +129,7 @@ build CMakeFiles/cantracer.dir/can_decoder.cpp.obj: CXX_COMPILER__cantracer_unsc
 #############################################
 # Link the executable cantracer.exe
 
-build cantracer.exe: CXX_EXECUTABLE_LINKER__cantracer_Debug CMakeFiles/cantracer.dir/cantracer_autogen/mocs_compilation.cpp.obj CMakeFiles/cantracer.dir/main.cpp.obj CMakeFiles/cantracer.dir/mainwindow.cpp.obj CMakeFiles/cantracer.dir/dbc_json_parser.cpp.obj CMakeFiles/cantracer.dir/asc_reader.cpp.obj CMakeFiles/cantracer.dir/signal_selection_dialog.cpp.obj CMakeFiles/cantracer.dir/can_decoder.cpp.obj | C$:/Qt/6.9.1/mingw_64/lib/libQt6Charts.a C$:/Qt/6.9.1/mingw_64/lib/libQt6OpenGLWidgets.a C$:/Qt/6.9.1/mingw_64/lib/libQt6Widgets.a C$:/Qt/6.9.1/mingw_64/lib/libQt6OpenGL.a C$:/Qt/6.9.1/mingw_64/lib/libQt6Gui.a C$:/Qt/6.9.1/mingw_64/lib/libQt6Core.a C$:/Qt/6.9.1/mingw_64/lib/libQt6EntryPoint.a || cantracer_autogen cantracer_autogen_timestamp_deps
+build cantracer.exe: CXX_EXECUTABLE_LINKER__cantracer_Debug CMakeFiles/cantracer.dir/cantracer_autogen/mocs_compilation.cpp.obj CMakeFiles/cantracer.dir/main.cpp.obj CMakeFiles/cantracer.dir/dbc_json_parser.cpp.obj CMakeFiles/cantracer.dir/asc_reader.cpp.obj CMakeFiles/cantracer.dir/signal_selection_dialog.cpp.obj CMakeFiles/cantracer.dir/can_decoder.cpp.obj CMakeFiles/cantracer.dir/mainwindow.cpp.obj CMakeFiles/cantracer.dir/cursormanager.cpp.obj CMakeFiles/cantracer.dir/customchartview.cpp.obj | C$:/Qt/6.9.1/mingw_64/lib/libQt6Charts.a C$:/Qt/6.9.1/mingw_64/lib/libQt6OpenGLWidgets.a C$:/Qt/6.9.1/mingw_64/lib/libQt6Widgets.a C$:/Qt/6.9.1/mingw_64/lib/libQt6OpenGL.a C$:/Qt/6.9.1/mingw_64/lib/libQt6Gui.a C$:/Qt/6.9.1/mingw_64/lib/libQt6Core.a C$:/Qt/6.9.1/mingw_64/lib/libQt6EntryPoint.a || cantracer_autogen cantracer_autogen_timestamp_deps
   FLAGS = -DQT_QML_DEBUG -g
   LINK_FLAGS = -mwindows
   LINK_LIBRARIES = C:/Qt/6.9.1/mingw_64/lib/libQt6Charts.a  C:/Qt/6.9.1/mingw_64/lib/libQt6OpenGLWidgets.a  C:/Qt/6.9.1/mingw_64/lib/libQt6Widgets.a  C:/Qt/6.9.1/mingw_64/lib/libQt6OpenGL.a  C:/Qt/6.9.1/mingw_64/lib/libQt6Gui.a  C:/Qt/6.9.1/mingw_64/lib/libQt6Core.a  -lmpr  -luserenv  -lmingw32  C:/Qt/6.9.1/mingw_64/lib/libQt6EntryPoint.a  -lshell32  -ld3d11  -ldxgi  -ldxguid  -ld3d12  -luser32  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32

@@ -14,6 +14,8 @@ struct CanSignal {
     double offset;
     bool isSigned=false ;    // Décalage
     bool isBigEndian = false;
+    int messageId = -1;  // ✅ ID du message parent
+
 };
 
 // Structure représentant un message CAN avec ses signaux

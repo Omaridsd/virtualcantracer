@@ -432,6 +432,18 @@
 			null
 		],
 		[
+			"C:/Users/DELL/OneDrive/Images/Bureau/virtualcantracer/cantracer/cursormanager.h",
+			"MU",
+			"EWIEGA46WW/moc_cursormanager.cpp",
+			null
+		],
+		[
+			"C:/Users/DELL/OneDrive/Images/Bureau/virtualcantracer/cantracer/customchartview.h",
+			"MU",
+			"EWIEGA46WW/moc_customchartview.cpp",
+			null
+		],
+		[
 			"C:/Users/DELL/OneDrive/Images/Bureau/virtualcantracer/cantracer/dbc_json_parser.h",
 			"MU",
 			"EWIEGA46WW/moc_dbc_json_parser.cpp",
@@ -441,6 +453,12 @@
 			"C:/Users/DELL/OneDrive/Images/Bureau/virtualcantracer/cantracer/mainwindow.h",
 			"MU",
 			"EWIEGA46WW/moc_mainwindow.cpp",
+			null
+		],
+		[
+			"C:/Users/DELL/OneDrive/Images/Bureau/virtualcantracer/cantracer/movablelineitem.h",
+			"MU",
+			"EWIEGA46WW/moc_movablelineitem.cpp",
 			null
 		],
 		[
@@ -540,6 +558,16 @@
 		],
 		[
 			"C:/Users/DELL/OneDrive/Images/Bureau/virtualcantracer/cantracer/can_decoder.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/DELL/OneDrive/Images/Bureau/virtualcantracer/cantracer/cursormanager.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/DELL/OneDrive/Images/Bureau/virtualcantracer/cantracer/customchartview.cpp",
 			"MU",
 			null
 		],

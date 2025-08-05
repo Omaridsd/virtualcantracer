@@ -15,8 +15,8 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets Charts)
 
 set(PROJECT_SOURCES
         main.cpp
-        mainwindow.cpp
-        mainwindow.h
+
+
         mainwindow.ui
         dbc_json_parser.cpp
         dbc_json_parser.h
@@ -39,6 +39,17 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         can_decoder.h
         signal_selection_dialog.h
         signal_selection_dialog.cpp
+
+        mainwindow.cpp
+        mainwindow.h
+        cursormanager.h
+        cursormanager.cpp
+        movablelineitem.h
+        customchartview.h
+        customchartview.cpp
+
+
+
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET cantracer APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR

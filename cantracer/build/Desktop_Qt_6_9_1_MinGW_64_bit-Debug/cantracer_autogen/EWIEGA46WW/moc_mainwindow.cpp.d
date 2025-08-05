@@ -5,6 +5,7 @@ C:/Users/DELL/OneDrive/Images/Bureau/virtualcantracer/cantracer/build/Desktop_Qt
   C:/Qt/6.9.1/mingw_64/include/QtCharts/QChart \
   C:/Qt/6.9.1/mingw_64/include/QtCharts/QChartGlobal \
   C:/Qt/6.9.1/mingw_64/include/QtCharts/QChartView \
+  C:/Qt/6.9.1/mingw_64/include/QtCharts/QDateTimeAxis \
   C:/Qt/6.9.1/mingw_64/include/QtCharts/QLegend \
   C:/Qt/6.9.1/mingw_64/include/QtCharts/QLineSeries \
   C:/Qt/6.9.1/mingw_64/include/QtCharts/QValueAxis \
@@ -14,13 +15,17 @@ C:/Users/DELL/OneDrive/Images/Bureau/virtualcantracer/cantracer/build/Desktop_Qt
   C:/Qt/6.9.1/mingw_64/include/QtCharts/qchart.h \
   C:/Qt/6.9.1/mingw_64/include/QtCharts/qchartglobal.h \
   C:/Qt/6.9.1/mingw_64/include/QtCharts/qchartview.h \
+  C:/Qt/6.9.1/mingw_64/include/QtCharts/qdatetimeaxis.h \
   C:/Qt/6.9.1/mingw_64/include/QtCharts/qlegend.h \
   C:/Qt/6.9.1/mingw_64/include/QtCharts/qlineseries.h \
   C:/Qt/6.9.1/mingw_64/include/QtCharts/qtcharts-config.h \
   C:/Qt/6.9.1/mingw_64/include/QtCharts/qtchartsexports.h \
   C:/Qt/6.9.1/mingw_64/include/QtCharts/qvalueaxis.h \
   C:/Qt/6.9.1/mingw_64/include/QtCharts/qxyseries.h \
+  C:/Qt/6.9.1/mingw_64/include/QtCore/QByteArray \
+  C:/Qt/6.9.1/mingw_64/include/QtCore/QDateTime \
   C:/Qt/6.9.1/mingw_64/include/QtCore/QList \
+  C:/Qt/6.9.1/mingw_64/include/QtCore/QMap \
   C:/Qt/6.9.1/mingw_64/include/QtCore/QMargins \
   C:/Qt/6.9.1/mingw_64/include/QtCore/QObject \
   C:/Qt/6.9.1/mingw_64/include/QtCore/QRect \
@@ -52,6 +57,7 @@ C:/Users/DELL/OneDrive/Images/Bureau/virtualcantracer/cantracer/build/Desktop_Qt
   C:/Qt/6.9.1/mingw_64/include/QtCore/qbytearrayalgorithms.h \
   C:/Qt/6.9.1/mingw_64/include/QtCore/qbytearraylist.h \
   C:/Qt/6.9.1/mingw_64/include/QtCore/qbytearrayview.h \
+  C:/Qt/6.9.1/mingw_64/include/QtCore/qcalendar.h \
   C:/Qt/6.9.1/mingw_64/include/QtCore/qchar.h \
   C:/Qt/6.9.1/mingw_64/include/QtCore/qcompare.h \
   C:/Qt/6.9.1/mingw_64/include/QtCore/qcompare_impl.h \
@@ -68,6 +74,7 @@ C:/Users/DELL/OneDrive/Images/Bureau/virtualcantracer/cantracer/build/Desktop_Qt
   C:/Qt/6.9.1/mingw_64/include/QtCore/qcoreevent.h \
   C:/Qt/6.9.1/mingw_64/include/QtCore/qdarwinhelpers.h \
   C:/Qt/6.9.1/mingw_64/include/QtCore/qdatastream.h \
+  C:/Qt/6.9.1/mingw_64/include/QtCore/qdatetime.h \
   C:/Qt/6.9.1/mingw_64/include/QtCore/qdeadlinetimer.h \
   C:/Qt/6.9.1/mingw_64/include/QtCore/qdebug.h \
   C:/Qt/6.9.1/mingw_64/include/QtCore/qelapsedtimer.h \
@@ -86,6 +93,7 @@ C:/Users/DELL/OneDrive/Images/Bureau/virtualcantracer/cantracer/build/Desktop_Qt
   C:/Qt/6.9.1/mingw_64/include/QtCore/qhashfunctions.h \
   C:/Qt/6.9.1/mingw_64/include/QtCore/qiodevice.h \
   C:/Qt/6.9.1/mingw_64/include/QtCore/qiodevicebase.h \
+  C:/Qt/6.9.1/mingw_64/include/QtCore/qitemselectionmodel.h \
   C:/Qt/6.9.1/mingw_64/include/QtCore/qiterable.h \
   C:/Qt/6.9.1/mingw_64/include/QtCore/qiterator.h \
   C:/Qt/6.9.1/mingw_64/include/QtCore/qlatin1stringview.h \
@@ -113,6 +121,7 @@ C:/Users/DELL/OneDrive/Images/Bureau/virtualcantracer/cantracer/build/Desktop_Qt
   C:/Qt/6.9.1/mingw_64/include/QtCore/qprocessordetection.h \
   C:/Qt/6.9.1/mingw_64/include/QtCore/qrect.h \
   C:/Qt/6.9.1/mingw_64/include/QtCore/qrefcount.h \
+  C:/Qt/6.9.1/mingw_64/include/QtCore/qregularexpression.h \
   C:/Qt/6.9.1/mingw_64/include/QtCore/qscopedpointer.h \
   C:/Qt/6.9.1/mingw_64/include/QtCore/qscopeguard.h \
   C:/Qt/6.9.1/mingw_64/include/QtCore/qset.h \
@@ -169,6 +178,7 @@ C:/Users/DELL/OneDrive/Images/Bureau/virtualcantracer/cantracer/build/Desktop_Qt
   C:/Qt/6.9.1/mingw_64/include/QtGui/QBrush \
   C:/Qt/6.9.1/mingw_64/include/QtGui/QFont \
   C:/Qt/6.9.1/mingw_64/include/QtGui/QImage \
+  C:/Qt/6.9.1/mingw_64/include/QtGui/QMouseEvent \
   C:/Qt/6.9.1/mingw_64/include/QtGui/QPen \
   C:/Qt/6.9.1/mingw_64/include/QtGui/QStandardItemModel \
   C:/Qt/6.9.1/mingw_64/include/QtGui/QTransform \
@@ -212,26 +222,50 @@ C:/Users/DELL/OneDrive/Images/Bureau/virtualcantracer/cantracer/build/Desktop_Qt
   C:/Qt/6.9.1/mingw_64/include/QtGui/qtguiexports.h \
   C:/Qt/6.9.1/mingw_64/include/QtGui/qtguiglobal.h \
   C:/Qt/6.9.1/mingw_64/include/QtGui/qtransform.h \
+  C:/Qt/6.9.1/mingw_64/include/QtGui/qvalidator.h \
   C:/Qt/6.9.1/mingw_64/include/QtGui/qvector2d.h \
   C:/Qt/6.9.1/mingw_64/include/QtGui/qvectornd.h \
   C:/Qt/6.9.1/mingw_64/include/QtGui/qwindowdefs.h \
   C:/Qt/6.9.1/mingw_64/include/QtGui/qwindowdefs_win.h \
+  C:/Qt/6.9.1/mingw_64/include/QtWidgets/QGraphicsLineItem \
   C:/Qt/6.9.1/mingw_64/include/QtWidgets/QGraphicsView \
   C:/Qt/6.9.1/mingw_64/include/QtWidgets/QGraphicsWidget \
   C:/Qt/6.9.1/mingw_64/include/QtWidgets/QLabel \
+  C:/Qt/6.9.1/mingw_64/include/QtWidgets/QListWidget \
   C:/Qt/6.9.1/mingw_64/include/QtWidgets/QMainWindow \
+  C:/Qt/6.9.1/mingw_64/include/QtWidgets/QTabWidget \
+  C:/Qt/6.9.1/mingw_64/include/QtWidgets/QTreeWidgetItem \
+  C:/Qt/6.9.1/mingw_64/include/QtWidgets/QVBoxLayout \
+  C:/Qt/6.9.1/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
+  C:/Qt/6.9.1/mingw_64/include/QtWidgets/qabstractitemview.h \
   C:/Qt/6.9.1/mingw_64/include/QtWidgets/qabstractscrollarea.h \
+  C:/Qt/6.9.1/mingw_64/include/QtWidgets/qabstractslider.h \
+  C:/Qt/6.9.1/mingw_64/include/QtWidgets/qabstractspinbox.h \
+  C:/Qt/6.9.1/mingw_64/include/QtWidgets/qboxlayout.h \
   C:/Qt/6.9.1/mingw_64/include/QtWidgets/qframe.h \
   C:/Qt/6.9.1/mingw_64/include/QtWidgets/qgraphicsitem.h \
   C:/Qt/6.9.1/mingw_64/include/QtWidgets/qgraphicslayoutitem.h \
   C:/Qt/6.9.1/mingw_64/include/QtWidgets/qgraphicsscene.h \
   C:/Qt/6.9.1/mingw_64/include/QtWidgets/qgraphicsview.h \
   C:/Qt/6.9.1/mingw_64/include/QtWidgets/qgraphicswidget.h \
+  C:/Qt/6.9.1/mingw_64/include/QtWidgets/qgridlayout.h \
   C:/Qt/6.9.1/mingw_64/include/QtWidgets/qlabel.h \
+  C:/Qt/6.9.1/mingw_64/include/QtWidgets/qlayout.h \
+  C:/Qt/6.9.1/mingw_64/include/QtWidgets/qlayoutitem.h \
+  C:/Qt/6.9.1/mingw_64/include/QtWidgets/qlistview.h \
+  C:/Qt/6.9.1/mingw_64/include/QtWidgets/qlistwidget.h \
   C:/Qt/6.9.1/mingw_64/include/QtWidgets/qmainwindow.h \
+  C:/Qt/6.9.1/mingw_64/include/QtWidgets/qrubberband.h \
   C:/Qt/6.9.1/mingw_64/include/QtWidgets/qscrollarea.h \
   C:/Qt/6.9.1/mingw_64/include/QtWidgets/qsizepolicy.h \
+  C:/Qt/6.9.1/mingw_64/include/QtWidgets/qslider.h \
+  C:/Qt/6.9.1/mingw_64/include/QtWidgets/qstyle.h \
+  C:/Qt/6.9.1/mingw_64/include/QtWidgets/qstyleoption.h \
+  C:/Qt/6.9.1/mingw_64/include/QtWidgets/qtabbar.h \
   C:/Qt/6.9.1/mingw_64/include/QtWidgets/qtabwidget.h \
+  C:/Qt/6.9.1/mingw_64/include/QtWidgets/qtreeview.h \
+  C:/Qt/6.9.1/mingw_64/include/QtWidgets/qtreewidget.h \
+  C:/Qt/6.9.1/mingw_64/include/QtWidgets/qtreewidgetitemiterator.h \
   C:/Qt/6.9.1/mingw_64/include/QtWidgets/qtwidgets-config.h \
   C:/Qt/6.9.1/mingw_64/include/QtWidgets/qtwidgetsexports.h \
   C:/Qt/6.9.1/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
@@ -447,5 +481,8 @@ C:/Users/DELL/OneDrive/Images/Bureau/virtualcantracer/cantracer/build/Desktop_Qt
   C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/time.h \
   C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/vadefs.h \
   C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wchar.h \
+  C:/Users/DELL/OneDrive/Images/Bureau/virtualcantracer/cantracer/asc_reader.h \
+  C:/Users/DELL/OneDrive/Images/Bureau/virtualcantracer/cantracer/can_decoder.h \
+  C:/Users/DELL/OneDrive/Images/Bureau/virtualcantracer/cantracer/can_frame.h \
   C:/Users/DELL/OneDrive/Images/Bureau/virtualcantracer/cantracer/dbc_json_parser.h \
   C:/Users/DELL/OneDrive/Images/Bureau/virtualcantracer/cantracer/signal_model.h
