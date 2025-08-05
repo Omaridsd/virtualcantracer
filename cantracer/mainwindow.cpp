@@ -11,13 +11,13 @@
 #include <QtCharts/QChartView>
 #include <QtCharts/QLineSeries>
 #include <QtCharts/QValueAxis>
-#include "signal_selection_dialog.h"
+//#include "signal_selection_dialog.h"
 #include <QToolTip>
 #include <QtCharts/QDateTimeAxis>
 #include <QColorDialog>
 #include <QtCharts/QScatterSeries>
+#include "movablecursorline.h"
 #include <QTimer>
-#include "movablelineitem.h"
 #include "customchartview.h"
 
 // Déclaration de la fonction de décodage
@@ -284,16 +284,36 @@ void MainWindow::showSignalGraph(const QString& signalName) {
     chart->addSeries(series);
     chart->addSeries(scatterSeries);
     chart->createDefaultAxes();
-
-    // Utiliser CustomChartView au lieu de QChartView
     CustomChartView* chartView = new CustomChartView(this);
     chartView->setChart(chart);
-    chartView->enableCursors(true);  // Active les deux curseurs
+    chartView->setRubberBand(QChartView::RectangleRubberBand);
+    chartView->setRenderHint(QPainter::Antialiasing);
+    connect(chartView, &CustomChartView::cursorMoved, this, [this, chartView](qreal xPos, int cursorId){
+        this->onCursorMoved(xPos, cursorId, chartView);
+    });
+    // Créer les curseurs
+    qreal xStart = chart->plotArea().left() + 50;
+    qreal xEnd = chart->plotArea().left() + 150;
 
-    // Synchronisation du zoom horizontal entre tous les graphiques
+    QLineF line1(xStart, chart->plotArea().top(), xStart, chart->plotArea().bottom());
+    QLineF line2(xEnd, chart->plotArea().top(), xEnd, chart->plotArea().bottom());
+
+    QGraphicsLineItem* cursor1 = new QGraphicsLineItem(line1);
+    QGraphicsLineItem* cursor2 = new QGraphicsLineItem(line2);
+    cursor1->setPen(QPen(Qt::black, 1, Qt::DashLine));
+    cursor2->setPen(QPen(Qt::black, 1, Qt::DashLine));
+
+    chartView->scene()->addItem(cursor1);
+    chartView->scene()->addItem(cursor2);
+
+    chartView->setCursors(cursor1, cursor2);
+    chartView->enableCursors(true);
+
+    // Connexion unique au moment de la création du graphique
     QValueAxis* axisX = qobject_cast<QValueAxis*>(chart->axes(Qt::Horizontal).first());
     if (axisX) {
         connect(axisX, &QValueAxis::rangeChanged, this, [this, axisX](qreal min, qreal max) {
+            // Synchroniser la plage X sur tous les autres graphiques
             for (int i = 0; i < graphsLayout->count(); ++i) {
                 QChartView* otherView = qobject_cast<QChartView*>(graphsLayout->itemAt(i)->widget());
                 if (otherView && otherView->chart()) {
@@ -309,21 +329,23 @@ void MainWindow::showSignalGraph(const QString& signalName) {
     chartView->setMinimumHeight(150);
     chartView->setRenderHint(QPainter::Antialiasing);
     chartView->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
-    chart->setTitle(signalName);
 
-    // Ajout dans l'interface
+    //chart->axes(Qt::Horizontal).first()->setTitleText("Temps (s)");
+    //chart->axes(Qt::Vertical).first()->setTitleText("Valeur");
+    chart->setTitle(signalName);  // sert à identifier le graphique pour pouvoir le retirer ensuite
+    QTimer::singleShot(0, this, [=]() {
+        addCursorLinesToChart(chartView);
+    });
     graphsLayout->addWidget(chartView);
+    signalChartViewsMap[signalName] = chartView;  // <-- Ici
 
-    // Enregistre la vue dans la map
-    signalChartViewsMap[signalName] = chartView;
-
-    // Apparence
     chartView->setCursor(Qt::PointingHandCursor);
     chartView->installEventFilter(this);
-    chart->setMargins(QMargins(0, 0, 0, 0));
-    chart->legend()->hide();
-    chart->setBackgroundRoundness(0);
+    chart->setMargins(QMargins(0, 0, 0, 0));             // Supprime les marges internes
+    chart->legend()->hide();                             // Cache la légende
+    chart->setBackgroundRoundness(0);                    // Coins non arrondis si utile
     chart->setBackgroundVisible(false);
+
 }
 
 
@@ -368,88 +390,36 @@ void MainWindow::clearAllData()
 }
 
 bool MainWindow::eventFilter(QObject* obj, QEvent* event) {
-    if (event->type() == QEvent::MouseButtonPress) {
         QMouseEvent* mouseEvent = static_cast<QMouseEvent*>(event);
 
+        // ❗️Seulement clic gauche
         if (mouseEvent->button() == Qt::LeftButton) {
             QChartView* clickedChart = qobject_cast<QChartView*>(obj);
-            if (!clickedChart)
-                return false;
-
-            // Vérifie s’il y a au moins un signal coché
-            bool foundChecked = false;
-            QTreeWidget* tree = ui->treeSignals;
-            for (int i = 0; i < tree->topLevelItemCount() && !foundChecked; ++i) {
-                QTreeWidgetItem* msgItem = tree->topLevelItem(i);
-                for (int j = 0; j < msgItem->childCount(); ++j) {
-                    if (msgItem->child(j)->checkState(0) == Qt::Checked) {
-                        foundChecked = true;
-                        break;
+            if (clickedChart) {
+                // Vérifie s’il y a au moins un signal coché dans le QTreeWidget
+                bool foundChecked = false;
+                QTreeWidget* tree = ui->treeSignals;
+                for (int i = 0; i < tree->topLevelItemCount() && !foundChecked; ++i) {
+                    QTreeWidgetItem* msgItem = tree->topLevelItem(i);
+                    for (int j = 0; j < msgItem->childCount(); ++j) {
+                        if (msgItem->child(j)->checkState(0) == Qt::Checked) {
+                            foundChecked = true;
+                            break;
+                        }
                     }
                 }
-            }
 
-            if (!foundChecked) {
-                qDebug() << "⚠️ Aucun signal coché.";
-                return false;
-            }
-
-            selectedChartView = clickedChart;
-            QChart* chart = clickedChart->chart();
-
-            // Convertir la position de la souris en coordonnées de l’axe X
-            QPointF posInChart = chart->mapToValue(mouseEvent->pos(), chart->series().first());
-            qreal xVal = posInChart.x();
-
-            QValueAxis* axisY = qobject_cast<QValueAxis*>(chart->axes(Qt::Vertical).first());
-            if (!axisY) return false;
-
-            // Calculer les positions top et bottom dans la scène pour une ligne verticale à xVal
-            QPointF topPoint = chart->mapToPosition(QPointF(xVal, axisY->max()));
-            QPointF bottomPoint = chart->mapToPosition(QPointF(xVal, axisY->min()));
-
-            QPointF sceneTop = clickedChart->mapToScene(topPoint.toPoint());
-            QPointF sceneBottom = clickedChart->mapToScene(bottomPoint.toPoint());
-
-            if (placingFirstCursor) {
-                // Supprimer ancien curseur 1 si existe
-                if (cursorLine1) {
-                    cursorLine1->scene()->removeItem(cursorLine1);
-                    delete cursorLine1;
-                    cursorLine1 = nullptr;
+                if (foundChecked) {
+                    selectedChartView = clickedChart;
+                    qDebug() << "✅ Graphique sélectionné (clic gauche sur n'importe quelle zone).";
+                } else {
+                    qDebug() << "⚠️ Aucun signal coché.";
                 }
-
-                cursorLine1 = new MovableLineItem(QLineF(sceneTop, sceneBottom));
-                cursorLine1->setPen(QPen(Qt::red, 1, Qt::DashLine));
-                chart->scene()->addItem(cursorLine1);
-                connect(static_cast<MovableLineItem*>(cursorLine1), &MovableLineItem::positionChanged, this, &MainWindow::onCursorLineMoved);
-
-                cursorLine1->setZValue(1000);
-                qDebug() << "🔴 Curseur 1 placé à x =" << xVal;
-            } else {
-                // Supprimer ancien curseur 2 si existe
-                if (cursorLine2) {
-                    cursorLine2->scene()->removeItem(cursorLine2);
-                    delete cursorLine2;
-                    cursorLine2 = nullptr;
-                }
-
-                cursorLine2 = new MovableLineItem(QLineF(sceneTop, sceneBottom));
-                cursorLine2->setPen(QPen(Qt::blue, 1, Qt::DashLine));
-                chart->scene()->addItem(cursorLine2);
-                connect(static_cast<MovableLineItem*>(cursorLine2), &MovableLineItem::positionChanged, this, &MainWindow::onCursorLineMoved);
-
-                cursorLine2->setZValue(1000);
-                qDebug() << "🔵 Curseur 2 placé à x =" << xVal;
             }
-
-            placingFirstCursor = !placingFirstCursor; // alterne entre les deux lignes
         }
-    }
 
     return QMainWindow::eventFilter(obj, event);
 }
-
 
 void MainWindow::onChangeGraphColor() {
     if (!selectedChartView) {
@@ -524,68 +494,53 @@ void MainWindow::hideSignalGraph(const QString& signalName) {
     }
     signalChartViewsMap.remove(signalName);
 }
+void MainWindow::addCursorLinesToChart(QChartView* chartView) {
+    QChart* chart = chartView->chart();
 
-void MainWindow::addCursorLinesToChart(QChart* chart) {
-    if (!chart || !chart->scene())
-        return;
+    // Créer deux lignes verticales initiales aux positions X différentes
+    qreal x1 = chart->plotArea().left() + 50;
+    qreal x2 = chart->plotArea().left() + 150;
 
-    QValueAxis* axisX = qobject_cast<QValueAxis*>(chart->axes(Qt::Horizontal).first());
-    QValueAxis* axisY = qobject_cast<QValueAxis*>(chart->axes(Qt::Vertical).first());
+    QLineF line1(x1, chart->plotArea().top(), x1, chart->plotArea().bottom());
+    QLineF line2(x2, chart->plotArea().top(), x2, chart->plotArea().bottom());
 
-    if (!axisX || !axisY) return;
+    /*auto* lineItem1 = new QGraphicsLineItem(line1);
+    auto* lineItem2 = new QGraphicsLineItem(line2);
 
-    qreal x1 = axisX->min() + (axisX->max() - axisX->min()) * 0.1;
-    qreal x2 = axisX->min() + (axisX->max() - axisX->min()) * 0.3;
+    lineItem1->setPen(QPen(Qt::black, 1, Qt::DashLine));
+    lineItem2->setPen(QPen(Qt::black, 1, Qt::DashLine));
 
-    QPointF top1 = chart->mapToPosition(QPointF(x1, axisY->max()));
-    QPointF bottom1 = chart->mapToPosition(QPointF(x1, axisY->min()));
+    chartView->scene()->addItem(lineItem1);
+    chartView->scene()->addItem(lineItem2);*/
 
-    QPointF top2 = chart->mapToPosition(QPointF(x2, axisY->max()));
-    QPointF bottom2 = chart->mapToPosition(QPointF(x2, axisY->min()));
-
-    // Supprimer anciennes lignes si elles existent
-    if (cursorLine1Map.contains(chart)) {
-        chart->scene()->removeItem(cursorLine1Map[chart]);
-        delete cursorLine1Map[chart];
-    }
-    if (cursorLine2Map.contains(chart)) {
-        chart->scene()->removeItem(cursorLine2Map[chart]);
-        delete cursorLine2Map[chart];
-    }
-
-    QGraphicsLineItem* line1 = chart->scene()->addLine(QLineF(top1, bottom1), QPen(Qt::red, 1, Qt::DashLine));
-    QGraphicsLineItem* line2 = chart->scene()->addLine(QLineF(top2, bottom2), QPen(Qt::blue, 1, Qt::DashLine));
-
-    line1->setZValue(1000);
-    line2->setZValue(1000);
-
-    cursorLine1Map[chart] = line1;
-    cursorLine2Map[chart] = line2;
-
-    qDebug() << "Curseurs ajoutés au graphique : " << chart;
+    // Enregistre les curseurs pour ce graphe (si tu veux les manipuler plus tard)
+    //cursorMap[chartView] = std::make_pair(lineItem1, lineItem2);
 }
-void MainWindow::onCursorLineMoved(qreal x)
-{
-    qDebug() << "Curseur déplacé à x =" << x;
+void MainWindow::onCursorMoved(qreal xPos, int cursorId, CustomChartView* sourceChartView) {
+    // Met à jour tous les autres graphiques sauf celui d'origine
+    for (int i = 0; i < graphsLayout->count(); ++i) {
+        QWidget* widget = graphsLayout->itemAt(i)->widget();
+        CustomChartView* chartView = qobject_cast<CustomChartView*>(widget);
+        if (chartView && chartView != sourceChartView) {
+            QGraphicsLineItem* cursorToMove = (cursorId == 1) ? chartView->getCursor1() : chartView->getCursor2();
+            QLineF newLine(xPos,
+                           chartView->chart()->plotArea().top(),
+                           xPos,
+                           chartView->chart()->plotArea().bottom());
+            cursorToMove->setLine(newLine);
+        }
+    }
 
-    if (!cursorLine1 || !cursorLine2)
-        return;
+    // Récupérer la position X des deux curseurs en coordonnées "valeurs" (ex: secondes)
+    qreal x1 = sourceChartView->chart()->mapToValue(sourceChartView->getCursor1()->line().p1()).x();
+    qreal x2 = sourceChartView->chart()->mapToValue(sourceChartView->getCursor2()->line().p1()).x();
 
-    // Récupérer les positions x des deux curseurs
-    qreal x1 = cursorLine1->pos().x();
-    qreal x2 = cursorLine2->pos().x();
+    qreal deltaT = std::abs(x2 - x1);
 
-    qreal deltaX = qAbs(x2 - x1);
+    qDebug() << "Delta T (secondes) :" << deltaT;
 
-    // Si tu as un axe temps avec un scale, convertis deltaX en deltaT réel
-    // Par exemple si ton axe X est en timestamp ms, alors deltaX est la différence temporelle en pixel
-    // Tu dois convertir pixels -> unité temps, selon ton QValueAxis ou QDateTimeAxis
-
-    qDebug() << "Delta X en pixels =" << deltaX;
-
-    // TODO: conversion pixels -> delta temps (en ms ou s)
-    // Par exemple :
-    // qreal deltaT = pixelToTime(deltaX);
-
-    // Afficher ou traiter deltaT
+    // Si tu as un QLabel* labelDeltaT dans ton UI, mets à jour son texte
+    if (ui->labelDeltaT) {
+        ui->labelDeltaT->setText(QString("Delta T : %1 s").arg(deltaT, 0, 'f', 3));
+    }
 }

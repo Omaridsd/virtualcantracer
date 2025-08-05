@@ -22,8 +22,8 @@ set(PROJECT_SOURCES
         dbc_json_parser.h
         asc_reader.cpp
         asc_reader.h
-        signal_selection_dialog.cpp
-        signal_selection_dialog.h
+
+
 
 
 
@@ -37,16 +37,18 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         can_decoder.cpp
         signal_model.h
         can_decoder.h
-        signal_selection_dialog.h
-        signal_selection_dialog.cpp
+
+
 
         mainwindow.cpp
         mainwindow.h
         cursormanager.h
         cursormanager.cpp
-        movablelineitem.h
-        customchartview.h
+        movablecursorline.h
         customchartview.cpp
+        customchartview.h
+
+
 
 
 

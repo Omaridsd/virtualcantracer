@@ -39,6 +39,7 @@ public:
     QHBoxLayout *horizontalLayout;
     QVBoxLayout *verticalLayout;
     QTreeWidget *treeSignals;
+    QLabel *labelDeltaT;
     QLabel *labelStatus;
     QScrollArea *scrollAreaGraphs;
     QWidget *scrollContentWidget;
@@ -84,14 +85,31 @@ public:
         __qtreewidgetitem->setText(0, QString::fromUtf8("1"));
         treeSignals->setHeaderItem(__qtreewidgetitem);
         treeSignals->setObjectName("treeSignals");
-        treeSignals->setMaximumSize(QSize(250, 16777215));
+        QSizePolicy sizePolicy(QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Maximum);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(treeSignals->sizePolicy().hasHeightForWidth());
+        treeSignals->setSizePolicy(sizePolicy);
+        treeSignals->setMaximumSize(QSize(250, 10000));
         treeSignals->setUniformRowHeights(true);
         treeSignals->setHeaderHidden(true);
 
         verticalLayout->addWidget(treeSignals);
 
+        labelDeltaT = new QLabel(centralwidget);
+        labelDeltaT->setObjectName("labelDeltaT");
+        labelDeltaT->setMaximumSize(QSize(16777215, 50));
+
+        verticalLayout->addWidget(labelDeltaT);
+
         labelStatus = new QLabel(centralwidget);
         labelStatus->setObjectName("labelStatus");
+        QSizePolicy sizePolicy1(QSizePolicy::Policy::Preferred, QSizePolicy::Policy::Preferred);
+        sizePolicy1.setHorizontalStretch(0);
+        sizePolicy1.setVerticalStretch(0);
+        sizePolicy1.setHeightForWidth(labelStatus->sizePolicy().hasHeightForWidth());
+        labelStatus->setSizePolicy(sizePolicy1);
+        labelStatus->setMaximumSize(QSize(16777215, 50));
         labelStatus->setTextFormat(Qt::TextFormat::PlainText);
 
         verticalLayout->addWidget(labelStatus);
@@ -156,6 +174,7 @@ public:
         actionChangeGraphColor->setText(QCoreApplication::translate("MainWindow", "color", nullptr));
         actionResetZoom->setText(QCoreApplication::translate("MainWindow", "zoom", nullptr));
         btnActivateCursors->setText(QCoreApplication::translate("MainWindow", "Activer curseurs", nullptr));
+        labelDeltaT->setText(QString());
         labelStatus->setText(QString());
         toolBar->setWindowTitle(QCoreApplication::translate("MainWindow", "toolBar", nullptr));
         menufenetre->setTitle(QCoreApplication::translate("MainWindow", "fenetre", nullptr));

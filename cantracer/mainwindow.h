@@ -21,6 +21,8 @@
 #include <QDateTime>
 #include "asc_reader.h"
 #include <QTreeWidgetItem>
+#include <QPair>
+#include "customchartview.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -59,11 +61,11 @@ private:
     bool placingFirstCursor = true;
     QMap<QChart*, QGraphicsLineItem*> cursorLine1Map;
     QMap<QChart*, QGraphicsLineItem*> cursorLine2Map;
-    QGraphicsLineItem* cursorLine1 = nullptr;
-    QGraphicsLineItem* cursorLine2 = nullptr;
+
     Ui::MainWindow *ui;
     AscReader* ascReader;  // Pointeur vers ton objet AscReader
     void hideSignalGraph(const QString& signalName);
+    QMap<QChartView*, QPair<QGraphicsLineItem*, QGraphicsLineItem*>> cursorMap;
 
     QMap<QChart*, CursorLines> cursorLinesMap;
     double cursorPos1 = 0.5;
@@ -92,6 +94,8 @@ private:
     void onCursorLineMoved(qreal x);
 
 private:
+    void addCursorLinesToChart(QChartView* view);
+
     QSet<QString> loadedSignals;
     QList<QChartView*> graphViews;  // Déclaration de la liste de graphiques
     void onSignalListUpdated(QListWidgetItem* /*item*/);
@@ -108,7 +112,6 @@ private:
     void addSeriesForSignal(const QString &signalName);
     void removeSeriesForSignal(const QString &signalName);
     void updateSignalListWidget();
-    bool showCursorEnabled = false;  // par défaut, le curseur est masqué
     void showSignalGraph(const QString &signalName);  // Affiche un graphique pour un signal
     void onMultipleSignalsSelected(const QStringList &selectedSignals);  // Affiche plusieurs graphiques
     void removeSignalGraph(const QString& signalName);
@@ -120,6 +123,13 @@ private:
     QMap<QString, QLineSeries*> signalSeriesMap;
     QMap<QString, QChartView*> signalChartViewsMap;
     void updateSignalTreeWidget();
+    QMap<QChartView*, QPair<QGraphicsLineItem*, QGraphicsLineItem*>> cursorLines;
+    QGraphicsLineItem* cursorLine1 = nullptr;
+    QGraphicsLineItem* cursorLine2 = nullptr;
+    bool cursorsEnabled = false;
+    void onCursorMoved(qreal xPos, int cursorId, CustomChartView* sourceChartView);
+private:
+    QLabel* labelDeltaT = nullptr;
 
 private slots:
     void onSignalCheckChanged(QListWidgetItem* item);

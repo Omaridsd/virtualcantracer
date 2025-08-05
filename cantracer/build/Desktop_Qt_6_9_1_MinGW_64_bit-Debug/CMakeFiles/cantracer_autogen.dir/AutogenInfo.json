@@ -456,21 +456,15 @@
 			null
 		],
 		[
-			"C:/Users/DELL/OneDrive/Images/Bureau/virtualcantracer/cantracer/movablelineitem.h",
+			"C:/Users/DELL/OneDrive/Images/Bureau/virtualcantracer/cantracer/movablecursorline.h",
 			"MU",
-			"EWIEGA46WW/moc_movablelineitem.cpp",
+			"EWIEGA46WW/moc_movablecursorline.cpp",
 			null
 		],
 		[
 			"C:/Users/DELL/OneDrive/Images/Bureau/virtualcantracer/cantracer/signal_model.h",
 			"MU",
 			"EWIEGA46WW/moc_signal_model.cpp",
-			null
-		],
-		[
-			"C:/Users/DELL/OneDrive/Images/Bureau/virtualcantracer/cantracer/signal_selection_dialog.h",
-			"MU",
-			"EWIEGA46WW/moc_signal_selection_dialog.cpp",
 			null
 		]
 	],
@@ -583,11 +577,6 @@
 		],
 		[
 			"C:/Users/DELL/OneDrive/Images/Bureau/virtualcantracer/cantracer/mainwindow.cpp",
-			"MU",
-			null
-		],
-		[
-			"C:/Users/DELL/OneDrive/Images/Bureau/virtualcantracer/cantracer/signal_selection_dialog.cpp",
 			"MU",
 			null
 		]

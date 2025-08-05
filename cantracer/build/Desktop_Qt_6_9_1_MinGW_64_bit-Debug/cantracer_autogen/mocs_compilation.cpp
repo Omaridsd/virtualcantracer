@@ -2,5 +2,3 @@
 #include "EWIEGA46WW/moc_cursormanager.cpp"
 #include "EWIEGA46WW/moc_customchartview.cpp"
 #include "EWIEGA46WW/moc_mainwindow.cpp"
-#include "EWIEGA46WW/moc_movablelineitem.cpp"
-#include "EWIEGA46WW/moc_signal_selection_dialog.cpp"

@@ -28,6 +28,7 @@ C:/Users/DELL/OneDrive/Images/Bureau/virtualcantracer/cantracer/build/Desktop_Qt
   C:/Qt/6.9.1/mingw_64/include/QtCore/QMap \
   C:/Qt/6.9.1/mingw_64/include/QtCore/QMargins \
   C:/Qt/6.9.1/mingw_64/include/QtCore/QObject \
+  C:/Qt/6.9.1/mingw_64/include/QtCore/QPair \
   C:/Qt/6.9.1/mingw_64/include/QtCore/QRect \
   C:/Qt/6.9.1/mingw_64/include/QtCore/QSize \
   C:/Qt/6.9.1/mingw_64/include/QtCore/QSizeF \
@@ -484,5 +485,6 @@ C:/Users/DELL/OneDrive/Images/Bureau/virtualcantracer/cantracer/build/Desktop_Qt
   C:/Users/DELL/OneDrive/Images/Bureau/virtualcantracer/cantracer/asc_reader.h \
   C:/Users/DELL/OneDrive/Images/Bureau/virtualcantracer/cantracer/can_decoder.h \
   C:/Users/DELL/OneDrive/Images/Bureau/virtualcantracer/cantracer/can_frame.h \
+  C:/Users/DELL/OneDrive/Images/Bureau/virtualcantracer/cantracer/customchartview.h \
   C:/Users/DELL/OneDrive/Images/Bureau/virtualcantracer/cantracer/dbc_json_parser.h \
   C:/Users/DELL/OneDrive/Images/Bureau/virtualcantracer/cantracer/signal_model.h

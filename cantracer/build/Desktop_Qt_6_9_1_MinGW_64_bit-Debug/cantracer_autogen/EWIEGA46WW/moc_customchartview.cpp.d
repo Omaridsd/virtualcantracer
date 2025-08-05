@@ -6,22 +6,14 @@ C:/Users/DELL/OneDrive/Images/Bureau/virtualcantracer/cantracer/build/Desktop_Qt
   C:/Qt/6.9.1/mingw_64/include/QtCharts/QChartGlobal \
   C:/Qt/6.9.1/mingw_64/include/QtCharts/QChartView \
   C:/Qt/6.9.1/mingw_64/include/QtCharts/QLegend \
-  C:/Qt/6.9.1/mingw_64/include/QtCharts/QLineSeries \
-  C:/Qt/6.9.1/mingw_64/include/QtCharts/QScatterSeries \
-  C:/Qt/6.9.1/mingw_64/include/QtCharts/QValueAxis \
-  C:/Qt/6.9.1/mingw_64/include/QtCharts/QXYSeries \
   C:/Qt/6.9.1/mingw_64/include/QtCharts/qabstractaxis.h \
   C:/Qt/6.9.1/mingw_64/include/QtCharts/qabstractseries.h \
   C:/Qt/6.9.1/mingw_64/include/QtCharts/qchart.h \
   C:/Qt/6.9.1/mingw_64/include/QtCharts/qchartglobal.h \
   C:/Qt/6.9.1/mingw_64/include/QtCharts/qchartview.h \
   C:/Qt/6.9.1/mingw_64/include/QtCharts/qlegend.h \
-  C:/Qt/6.9.1/mingw_64/include/QtCharts/qlineseries.h \
-  C:/Qt/6.9.1/mingw_64/include/QtCharts/qscatterseries.h \
   C:/Qt/6.9.1/mingw_64/include/QtCharts/qtcharts-config.h \
   C:/Qt/6.9.1/mingw_64/include/QtCharts/qtchartsexports.h \
-  C:/Qt/6.9.1/mingw_64/include/QtCharts/qvalueaxis.h \
-  C:/Qt/6.9.1/mingw_64/include/QtCharts/qxyseries.h \
   C:/Qt/6.9.1/mingw_64/include/QtCore/QList \
   C:/Qt/6.9.1/mingw_64/include/QtCore/QMargins \
   C:/Qt/6.9.1/mingw_64/include/QtCore/QObject \
@@ -168,7 +160,6 @@ C:/Users/DELL/OneDrive/Images/Bureau/virtualcantracer/cantracer/build/Desktop_Qt
   C:/Qt/6.9.1/mingw_64/include/QtCore/qyieldcpu.h \
   C:/Qt/6.9.1/mingw_64/include/QtGui/QBrush \
   C:/Qt/6.9.1/mingw_64/include/QtGui/QFont \
-  C:/Qt/6.9.1/mingw_64/include/QtGui/QImage \
   C:/Qt/6.9.1/mingw_64/include/QtGui/QMouseEvent \
   C:/Qt/6.9.1/mingw_64/include/QtGui/QPen \
   C:/Qt/6.9.1/mingw_64/include/QtGui/QTransform \
